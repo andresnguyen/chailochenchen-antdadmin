@@ -19,13 +19,10 @@ function showConfirm(id) {
     cancelText: 'Không xóa nữa',
     onOk: async () => {
       try {
-        const product = await productAPI.delete(id)(() => {
-          message.success('Xóa thành công rồi nha');
-        })();
+        const product = await productAPI.delete(id);
+        message.success('Xóa thành công rồi nha');
       } catch (error) {
-        (() => {
-          message.error('Xóa không thành công...');
-        })();
+        message.error('Xóa không thành công...');
       }
     },
     onCancel() {
