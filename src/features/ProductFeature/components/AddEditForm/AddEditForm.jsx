@@ -87,8 +87,8 @@ function AddEditForm({ isEdit, onSubmit, initialValues }) {
       <Form.Item label="Link Facebook" name="facebookLink">
         <Input placeholder="Nhập link facebook" />
       </Form.Item>
-      <Form.Item label="Kích hoạt" name="isActive">
-        <Switch />
+      <Form.Item label="Kích hoạt" name="isActive" valuePropName="checked">
+        <Switch  />
       </Form.Item>
 
       <Form.Item
