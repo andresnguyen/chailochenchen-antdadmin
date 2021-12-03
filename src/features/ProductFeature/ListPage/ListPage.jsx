@@ -9,28 +9,6 @@ import useProductList from '../hooks/useProductList';
 
 const { confirm } = Modal;
 
-function showConfirm(id) {
-  confirm({
-    title: 'Muốn xóa sản phẩm này thật à?',
-    closable: true,
-    icon: <ExclamationCircleOutlined />,
-    content: 'Xóa là mất luôn đấy nhá',
-    okText: 'Ừ, xóa :)',
-    cancelText: 'Không xóa nữa',
-    onOk: async () => {
-      try {
-        const product = await productAPI.delete(id);
-        message.success('Xóa thành công rồi nha');
-      } catch (error) {
-        message.error('Xóa không thành công...');
-      }
-    },
-    onCancel() {
-      console.log('Cancel');
-    },
-  });
-}
-
 function ListPage(props) {
   const [filters, setFilters] = useState({
     page: 0,
@@ -50,6 +28,29 @@ function ListPage(props) {
   const handleEditButtonClick = (id) => {
     history.push(`/products/${id}`);
   };
+
+  function showConfirm(id) {
+    confirm({
+      title: 'Muốn xóa sản phẩm này thật à?',
+      closable: true,
+      icon: <ExclamationCircleOutlined />,
+      content: 'Xóa là mất luôn đấy nhá',
+      okText: 'Ừ, xóa :)',
+      cancelText: 'Không xóa nữa',
+      onOk: async () => {
+        try {
+          const product = await productAPI.delete(id);
+          message.success('Xóa thành công rồi nha');
+          setFilters({ ...filters });
+        } catch (error) {
+          message.error('Xóa không thành công...');
+        }
+      },
+      onCancel() {
+        console.log('Cancel');
+      },
+    });
+  }
 
   const columns = [
     {
