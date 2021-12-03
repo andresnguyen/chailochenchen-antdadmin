@@ -40,4 +40,5 @@ export const productCategoryList = [
         category: "nguyen-lieu"
     }
 ]
-
+console.log(process.env)
+export const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3002/"

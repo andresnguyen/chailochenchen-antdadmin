@@ -1,9 +1,8 @@
-
-import { configureStore } from '@reduxjs/toolkit'
-import userReducer from '../features/AuthFeature/AuthSlice'
+import { configureStore } from '@reduxjs/toolkit';
+import userReducer from '../features/AuthFeature/AuthSlice';
 
 const rootReducer = {
-    user: userReducer
+  user: userReducer,
 };
 
 const store = configureStore({

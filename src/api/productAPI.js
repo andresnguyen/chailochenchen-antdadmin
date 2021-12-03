@@ -16,8 +16,8 @@ const productAPI = {
     return axiosClient.post(url, data);
   },
 
-  update(data) {
-    const url = `/products/${data.id}`;
+  update(data, id) {
+    const url = `/products/${id}`;
     return axiosClient.patch(url, data);
   },
 

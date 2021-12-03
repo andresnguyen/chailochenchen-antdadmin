@@ -1,22 +1,28 @@
 import axios from 'axios';
+import { API_URL, authStorageKeys } from '../constants';
 
 const axiosClient = axios.create({
-  baseURL: 'http://localhost:3002/',
+  baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Interceptors
 // Add a request interceptor
 axiosClient.interceptors.request.use(
   function (config) {
+    const ACCESS_TOKEN = localStorage.getItem(authStorageKeys.TOKEN);
+    if (ACCESS_TOKEN) {
+      config.headers.common['Authorization'] = 'Bearer ' + ACCESS_TOKEN;
+    }
+
     // Do something before request is sent
     return config;
   },
+
   function (error) {
     // Do something with request error
-    return Promise.reject(error);
+    return Promise.reject(error); 
   }
 );
 

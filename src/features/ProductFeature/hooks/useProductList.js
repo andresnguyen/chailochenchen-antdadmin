@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import productAPI from '../../../api/productAPI';
 
-export default function useProductList() {
+export default function useProductList(filters) {
   const [productList, setProductList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pagination, setPagination] = useState(true);
@@ -10,7 +10,7 @@ export default function useProductList() {
     (async () => {
       try {
         setLoading(true);
-        const { data, pagination } = await productAPI.getAll();
+        const { data, pagination } = await productAPI.getAll(filters);
         setProductList(data);
         setPagination(pagination)
       } catch (error) {
@@ -19,7 +19,7 @@ export default function useProductList() {
 
       setLoading(false);
     })();
-  }, []);
+  }, [filters]);
 
   return { productList, pagination, loading };
 }
