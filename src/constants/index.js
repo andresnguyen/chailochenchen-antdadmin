@@ -1,6 +1,5 @@
 import { FolderOutlined } from '@ant-design/icons';
 
-
 export const navlinks = [
   {
     name: 'Quản lý sản phẩm',
@@ -10,35 +9,26 @@ export const navlinks = [
 ];
 
 export const authStorageKeys = {
-    TOKEN: "token",
-    USER: "user"
-}
+  TOKEN: 'token',
+  USER: 'user',
+};
 
 export const productCategoryList = [
-    {
-        name: "Chai nhựa",
-        category: "chai-nhua",
-    },
-    {
-        name: "Hộp đựng sữa chua",
-        category: "hop-dung-sua-chua"
-    },
-    {
-        name: "Hũ đựng làm bánh flan",
-        category: "hu-dung-lam-banh-flan"
-    },
-    {
-        name: "Hộp, muống, ống hút",
-        category: "hop-muong-ong-hut"
-    },
-    {
-        name: "Túi nylong",
-        category: "tui-nylong"
-    },
-    {
-        name: "Nguyên liệu",
-        category: "nguyen-lieu"
-    }
-]
-console.log(process.env)
-export const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3002/"
+  {
+    display: 'Chai nhựa',
+    category: 'chai-nhua',
+  },
+  {
+    display: 'Ly nhựa',
+    category: 'hop-dung-sua-chua',
+  },
+  {
+    display: 'Hũ nhựa',
+    category: 'hu-dung-lam-banh-flan',
+  },
+  {
+    display: 'Túi, ống, hút, muỗng',
+    category: 'hop-muong-ong-hut',
+  },
+];
+export const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3002/';
