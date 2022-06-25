@@ -15,19 +15,19 @@ export const authStorageKeys = {
 
 export const productCategoryList = [
   {
-    display: 'Chai nhựa',
+    name: 'Chai nhựa',
     category: 'chai-nhua',
   },
   {
-    display: 'Ly nhựa',
+    name: 'Ly nhựa',
     category: 'hop-dung-sua-chua',
   },
   {
-    display: 'Hũ nhựa',
+    name: 'Hũ nhựa',
     category: 'hu-dung-lam-banh-flan',
   },
   {
-    display: 'Túi, ống, hút, muỗng',
+    name: 'Túi, ống, hút, muỗng',
     category: 'hop-muong-ong-hut',
   },
 ];
